@@ -15,26 +15,26 @@ namespace blueye {
         AutoptrObject(){
             _retainCount = 0;
         }
-        
+
         virtual ~AutoptrObject(){
         }
-        
+
         inline int getRetainCount() {
             return _retainCount;
         }
-        
+
         inline void retain(){
             _retainCount++;
         }
-        
+
         inline void release(){
             _retainCount--;
-            
+
             if (_retainCount<=0) {
                 delete this;
             }
         }
-        
+
     private:
         int _retainCount;
     };

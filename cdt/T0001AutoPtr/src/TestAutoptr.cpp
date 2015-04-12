@@ -11,26 +11,22 @@
 #include <stdio.h>
 
 class Hello:public blueye::AutoptrObject {
-    
+
 public:
-    void sayHello(){
-        printf("Hello autoptr\n");
-    }
-    
-    virtual ~Hello(){
-        printf("delete Hello \n");
-    }
+	void sayHello(){
+		printf("Hello autoptr\n");
+	}
+
+	virtual ~Hello(){
+		printf("delete Hello\n");
+	}
 };
 
 
 int main(){
-    blueye::autoptr<Hello> hi(new Hello());
-    hi->sayHello();
-    
-    blueye::autoptr<Hello> hi1(hi);
-    blueye::autoptr<Hello> hi2(hi1);
+	blueye::autoptr<Hello> hi(new Hello());
+	hi->sayHello();
 
-    hi1->sayHello();
-
-    return 0;
+	blueye::autoptr<Hello> hi1(hi);
+	return 0;
 }

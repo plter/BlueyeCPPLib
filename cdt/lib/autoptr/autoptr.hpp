@@ -13,7 +13,7 @@
 
 namespace blueye {
     template<class T>
-    class autoptr{
+    class autoptr final{
     public:
         autoptr(T * ptr){
             internalConstructor(ptr);
